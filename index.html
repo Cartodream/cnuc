@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/placecard.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" type="text/css" media="all"/>
+	<link rel="shortcut icon" type="image/x-icon" href="https://static.wixstatic.com/media/309347_841a7394888a4b05a67b20f26f4272ac~mv2.png/v1/fill/w_110,h_67,al_c,q_85,usm_0.66_1.00_0.01/logo_large.webp" />
+
+
+    </head>
+<body class="OpenStreetMap">
+    <div id="map"></div>
+    
+    <script>
+        let map = null;
+        let placecard = "\n                   <div class=\"placecard__left\">\n                <p class=\"placecard__business-name\">Les réacteurs nucléraires en France<\/p>";
+  
+    
+        let zoom = 6;
+        let mapType = false;
+                let scale = false;
+        
+        
+        function initMap() {
+            
+                            
+                map = L.map('map', {
+                    center: [46.40280879390678, 2.9480310706126196],
+                    zoom: zoom,
+                    zoomControl: false,
+                    gestureHandling: true,
+                    attributionControl: false
+                });
+
+		var LeafIcon = L.Icon.extend({
+		options: {
+			iconSize:     [50, 50],
+		}
+	});
+  		L.control.attribution().setPrefix('<a href="https://cartodream.wixsite.com/website-1" target="_blank">Cartodream</a> &middot; <a href="https://www.openstreetmap.fr/" target="_blank">OSM</a> &middot;<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot').addTo(map);
+	
+	var P4bIcon = new LeafIcon({iconUrl: 'image/Icone_Centrale_Nucleaire.svg'});
+
+
+	
+
+               
+                L.tileLayer('http://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {}).addTo(map);
+		
+		
+                L.marker([47.51151793365153, 2.8721447338168433], {icon: P4bIcon})
+	.bindPopup("<b>Belleville</b><br/>Catégorie P'4<br /><br/>Nombre de réacteurs : 2<br />")
+	.addTo(map);
+		L.marker([48.51520459152882, 3.5213569832533778], {icon: P4bIcon})
+	.bindPopup("<b>Nogent</b><br/>Catégorie P'4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([45.40501523029046, 4.755496423805513], {icon: P4bIcon})
+	.bindPopup("<b>Saint Alban</b><br/>Catégorie P4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([49.535622277407846, -1.8834363921083548], {icon: P4bIcon})
+	.bindPopup("<b>Flamanville</b><br/>Catégorie P4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([47.72015281920924, 1.578035388243453], {icon: P4bIcon})
+	.bindPopup("<b>Saint Laurent</b><br/>Catégorie CP2<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([44.32632427998681, 4.730714883101231], {icon: P4bIcon})
+	.bindPopup("<b>Tricastin</b><br/>Catégorie CP1<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([51.014637857733916, 2.135452112457521], {icon: P4bIcon})
+	.bindPopup("<b>Gravelines</b><br/>Catégorie CP1<br /><br/>Nombre de réacteurs : 6<br />")	
+	.addTo(map);
+		L.marker([49.97632776854012, 1.2101563674314733], {icon: P4bIcon})
+	.bindPopup("<b>Penly</b><br/>Catégorie P'4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([44.106621898047244, 0.8543353021395372], {icon: P4bIcon})
+	.bindPopup("<b>Golfech</b><br/>Catégorie P'4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([49.85836949622245, 0.6345785502322187], {icon: P4bIcon})
+	.bindPopup("<b>Paluel</b><br/>Catégorie P4<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([47.73322577475361, 2.515521973586238], {icon: P4bIcon})
+	.bindPopup("<b>Dampierre</b><br/>Catégorie CP1<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([44.63219210156553, 4.7519098839080565], {icon: P4bIcon})
+	.bindPopup("<b>Cruas</b><br/>Catégorie CP2<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([46.45817634605239, 0.6502657657536591], {icon: P4bIcon})
+	.bindPopup("<b>Civaux</b><br/>Catégorie N4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([47.232006553186096, 0.1647764217244783], {icon: P4bIcon})
+	.bindPopup("<b>Chinon-B</b><br/>Catégorie CP2<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([50.09057109771033, 4.789405736748784], {icon: P4bIcon})
+	.bindPopup("<b>Chooz-B</b><br/>Catégorie N4<br /><br/>Nombre de réacteurs : 2<br />")	
+	.addTo(map);
+		L.marker([49.41564608304465, 6.21863567851731], {icon: P4bIcon})
+	.bindPopup("<b>Cattenom</b><br/>Catégorie P'4<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([45.256950823752625, -0.6908349110449777], {icon: P4bIcon})
+	.bindPopup("<b>Blayaus</b><br/>Catégorie CP1<br /><br/>Nombre de réacteurs : 4<br />")	
+	.addTo(map);
+		L.marker([45.79931563087665, 5.267757823938587], {icon: P4bIcon})
+	.bindPopup("<b>Bugey</b><br/>Catégorie CP0<br /><br/>Nombre de réacteurs : 5<br />")	
+	.addTo(map);;	
+                if(scale) {
+                    L.control.scale({
+                        position: 'bottomright',
+                        imperial: false
+                    }).addTo(map);
+                }
+                L.control.zoom({
+                    position: 'bottomright',
+                }).addTo(map);
+                
+                                    
+                    L.control.custom({
+                        position: 'topleft',
+                        content: placecard,
+                        classes: 'location-infobox',
+                        /*
+                        style: {
+                            width: '200px',
+                            margin: '10px',
+                            padding: '5px 10px',
+                            background: '#fff',
+                        },
+                         */
+                    }).addTo(map);
+                    
+                                        
+        }
+        
+
+                    window.onload = function(){
+                initMap();
+            };
+        
+    </script>
+            <script type="text/javascript" src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script type="text/javascript" src="https://cdnnen.proxi.tools/res/global/js/leaflet/Leaflet.Control.Custom.js"></script>
+
+
+
+    </body>
+</html>
